@@ -16,8 +16,8 @@
   --status-ongoing: #d97b4f;
   --status-planned: #5c6672;
 
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-display: Aptos, 'Segoe UI', Calibri, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-body: Aptos, 'Segoe UI', Calibri, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
   --fs-xs: 0.8125rem;
