@@ -32,6 +32,10 @@
   text-decoration: none;
 }
 
+.brand-wordmark {
+  display: inline-flex;
+}
+
 .brand-mark {
   color: var(--accent-teal);
 }

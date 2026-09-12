@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research</title>
+  <meta name="description" content="Research areas at AxA: reinforcement learning, zero-knowledge machine learning, and self-organizing systems, plus a look at future work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/research.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-wordmark"><span class="brand-mark">AxA</span>
+        <span class="brand-full">Robotics and Research Lab</span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="research.html" aria-current="page">Research</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Research</h1>
+        <p>Ongoing lines of inquiry across learning systems, provable computation, and self-organization plus where the work is headed next.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Research areas</h2>
+          <p>Select an area to read more about the problem and current approach.</p>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item is-open">
+            <button class="accordion-trigger" aria-expanded="true">
+              <span class="accordion-trigger-label">
+                Reinforcement Learning &amp; Robotics
+                <span class="status status--completed">Active</span>
+              </span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-panel" style="max-height: 400px;">
+              <div class="accordion-panel-inner">
+                <p>Training simulated agents to control physical bodies &mdash; balance, locomotion, and recovery from disturbance &mdash; using policy gradient methods. The humanoid walking project is the primary testbed for this line of work, evaluating how far a relatively simple MLP policy can be pushed with enough training signal.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-trigger-label">
+                Zero-Knowledge Machine Learning
+                <span class="status status--completed">Published</span>
+              </span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-panel-inner">
+                <p>Zero-knowledge proofs let a model's output be verified without revealing the model or its inputs, but proving a forward pass in-circuit gets expensive fast. This work looks at which architectural choices drive that cost &mdash; specifically, using ReLU activation count as a predictor of proof cost, and refining CNN architectures to hold accuracy while reducing that count.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span class="accordion-trigger-label">
+                Self-Organizing Systems
+                <span class="status status--ongoing">Ongoing</span>
+              </span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-panel-inner">
+                <p>Neural Cellular Automata grow a target structure from a single cell using only local update rules &mdash; no global blueprint, similar to how a genome guides biological development without directly specifying final geometry. Currently implemented in 2D; extending the same rule-based growth into 3D, and eventually into structures that change over time (4D), is in progress.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Publications</h2>
+        </div>
+
+        <article class="publication">
+          <span class="status status--completed">Published</span>
+          <h3>ZK Cost-Aware Model Training: An Empirical Analysis of ReLU Activation Count as a Predictor of Zero-Knowledge Proof Cost</h3>
+          <p>An empirical study of what makes a neural network expensive to prove in zero-knowledge, and how activation choices can be tuned to reduce that cost without sacrificing accuracy.</p>
+          <div class="publication-meta">
+            <span>DOI: 10.5281/zenodo.21266805</span>
+            <span><a href="https://doi.org/10.5281/zenodo.21266805" target="_blank" rel="noopener">View on Zenodo</a></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Future work</h2>
+          <p>Early-stage work not yet built &mdash; included here for direction, not as a finished result.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-media">
+            <img src="images/research/rocket-cad.jpg" alt="CAD cross-section of the planned rocket airframe, showing payload, propellant, and fin sections">
+            <img src="images/research/satellite-infographic.jpg" alt="Diagram of the planned spherical satellite payload, showing solar cells, sensors, and onboard systems">
+          </div>
+          <div class="roadmap-copy">
+            <span class="status status--planned">Planned</span>
+            <h3>Atmospheric-Escape Rocket &amp; Satellite Payload</h3>
+            <p>A rocket designed to carry a small spherical satellite payload past the atmosphere, where it separates and measures outer-space temperature before relaying telemetry back to a ground station.</p>
+            <ul class="roadmap-list">
+              <li>360&deg; solar coverage for power in any orientation</li>
+              <li>Onboard temperature sensing (external, internal, electronics)</li>
+              <li>Autonomous low-power operation cycle with periodic telemetry</li>
+              <li>Ground station receiver and dashboard for live status</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-brand">AxA Robotics and Research Lab &mdash; &copy; 2026</p>
+      <nav class="footer-links" aria-label="Social">
+        <a href="https://github.com/abraaham1" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/abdulrahman-iqbal01" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/accordion.js"></script>
+</body>
+</html>
