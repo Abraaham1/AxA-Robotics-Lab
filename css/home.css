@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Home page — hero, stats ledger, featured projects
-   ========================================================================== */
-
 .hero {
   padding-block: var(--space-7) var(--space-6);
 }
@@ -38,7 +34,6 @@
   height: 100%;
 }
 
-/* Stats ledger — spec-sheet style row, not cards */
 .stats-ledger {
   border-top: 1px solid var(--border-hairline);
   border-bottom: 1px solid var(--border-hairline);
@@ -75,7 +70,6 @@
   color: var(--text-secondary);
 }
 
-/* Featured project preview cards */
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -86,11 +80,13 @@
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-sm);
   padding: var(--space-4);
-  transition: border-color var(--duration-fast) var(--ease-standard);
+  transition: border-color var(--duration-fast) var(--ease-standard),
+              box-shadow var(--duration-fast) var(--ease-standard);
 }
 
 .preview-card:hover {
   border-color: var(--accent-teal-dim);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
 }
 
 .preview-card h3 {

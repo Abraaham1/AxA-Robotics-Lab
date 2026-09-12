@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Projects page — card grid, detail modal, media carousel
-   ========================================================================== */
-
 .page-header {
   padding-block: var(--space-6) var(--space-5);
   border-bottom: 1px solid var(--border-hairline);
@@ -11,7 +7,6 @@
   font-size: var(--fs-md);
 }
 
-/* Project card grid */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -26,11 +21,13 @@
   padding: var(--space-4);
   color: inherit;
   font-family: inherit;
-  transition: border-color var(--duration-fast) var(--ease-standard);
+  transition: border-color var(--duration-fast) var(--ease-standard),
+              box-shadow var(--duration-fast) var(--ease-standard);
 }
 
 .project-card:hover {
   border-color: var(--accent-teal-dim);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
 }
 
 .project-card-media {
@@ -43,11 +40,20 @@
   border: 1px solid var(--border-hairline);
 }
 
+.project-card-media--square {
+  aspect-ratio: 1 / 1;
+}
+
 .project-card-media video,
 .project-card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.project-card-media--square video,
+.project-card-media--square img {
+  object-fit: contain;
 }
 
 .project-card h3 {
@@ -69,11 +75,10 @@
   font-weight: 500;
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(6, 8, 11, 0.8);
+  background: rgba(6, 8, 11, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,6 +95,7 @@
 }
 
 .modal {
+  position: relative;
   background: var(--bg-panel);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-sm);
@@ -107,15 +113,19 @@
 }
 
 .modal-close {
-  float: right;
-  background: transparent;
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 10;
+  background: var(--bg-panel);
   border: 1px solid var(--border-hairline);
   color: var(--text-secondary);
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   font-size: var(--fs-md);
   line-height: 1;
+  cursor: pointer;
 }
 
 .modal-close:hover {
@@ -125,7 +135,7 @@
 
 .modal h3 {
   margin-bottom: var(--space-2);
-  clear: both;
+  padding-right: var(--space-6);
 }
 
 .modal .status {
@@ -153,7 +163,6 @@
   border-radius: var(--radius-sm);
 }
 
-/* Carousel — inside the modal */
 .carousel {
   position: relative;
   margin-bottom: var(--space-4);
@@ -165,6 +174,10 @@
   overflow: hidden;
   background: var(--bg-base);
   border: 1px solid var(--border-hairline);
+}
+
+.carousel-track--square {
+  aspect-ratio: 1 / 1;
 }
 
 .carousel-slide {
@@ -181,7 +194,7 @@
 .carousel-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .carousel-controls {
@@ -199,6 +212,7 @@
   height: 34px;
   border-radius: var(--radius-sm);
   font-size: var(--fs-sm);
+  cursor: pointer;
 }
 
 .carousel-btn:hover {
@@ -217,6 +231,7 @@
   background: var(--border-hairline);
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 .carousel-dot.is-active {

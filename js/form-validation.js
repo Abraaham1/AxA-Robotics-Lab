@@ -1,9 +1,3 @@
-/* ==========================================================================
-   Contact form — client-side validation.
-   This is a static site with no backend, so "submission" here validates
-   the fields and shows a success message; it does not send data anywhere.
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#contact-form');
   if (!form) return;
@@ -46,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return isValid;
   };
 
-  // Validate on blur for immediate feedback, not on every keystroke
   Object.keys(fields).forEach((key) => {
     fields[key].el.addEventListener('blur', () => validateField(key));
   });
@@ -60,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     statusBox.classList.remove('is-visible', 'is-success', 'is-error');
 
     if (allValid) {
-      statusBox.textContent = 'Message sent. Thanks for reaching out — expect a reply soon.';
+      statusBox.textContent = 'Message sent. Thanks for reaching out, expect a reply soon.';
       statusBox.classList.add('is-visible', 'is-success');
       form.reset();
     } else {

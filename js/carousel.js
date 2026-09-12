@@ -1,9 +1,3 @@
-/* ==========================================================================
-   Carousel — renders the media list for whichever project modal is open.
-   Listens for 'carousel:load' (dispatched by modal.js with a list of
-   { type, src } media items) and 'carousel:stop' (pauses video on close).
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.carousel-track');
   const dotsWrap = document.querySelector('.carousel-dots');
@@ -55,13 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         const img = document.createElement('img');
         img.src = item.src;
-        img.alt = '';
+        img.alt = 'Project screenshot';
         slide.appendChild(img);
       }
 
       track.appendChild(slide);
 
       const dot = document.createElement('button');
+      dot.type = 'button';
       dot.className = 'carousel-dot';
       dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
       dot.addEventListener('click', () => renderSlide(i));

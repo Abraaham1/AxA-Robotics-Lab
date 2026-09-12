@@ -1,8 +1,3 @@
-/* ==========================================================================
-   Animated stat counters — count up from 0 to their target value once
-   the stats ledger scrolls into view. Runs only once per page load.
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   const statValues = document.querySelectorAll('.stat-value[data-target]');
   if (statValues.length === 0) return;
@@ -12,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const animateCount = (el) => {
     const target = Number(el.dataset.target);
     const suffix = el.dataset.suffix || '';
-    const duration = 1200; // ms
+    const duration = 1200;
     const startTime = performance.now();
 
     if (prefersReducedMotion) {
@@ -23,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const step = (now) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // ease-out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.round(target * eased);
       el.textContent = current + suffix;

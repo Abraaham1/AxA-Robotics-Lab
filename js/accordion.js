@@ -1,9 +1,3 @@
-/* ==========================================================================
-   Accordion — research area expand/collapse.
-   Each item toggles independently; opening one does not close others,
-   since research areas aren't mutually exclusive.
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   const items = document.querySelectorAll('.accordion-item');
 

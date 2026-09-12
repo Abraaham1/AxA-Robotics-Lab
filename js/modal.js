@@ -1,11 +1,3 @@
-/* ==========================================================================
-   Project detail modal
-   Each .project-card carries data-* attributes describing its content.
-   Clicking a card reads those attributes, fills the modal, and opens it.
-   The carousel inside the modal is driven separately by carousel.js,
-   which reads the same card's media list.
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.querySelector('.modal-overlay');
   if (!overlay) return;
@@ -16,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const statusEl = overlay.querySelector('[data-modal-status]');
   const descEl = overlay.querySelector('[data-modal-description]');
   const tagsEl = overlay.querySelector('[data-modal-tags]');
+  const carouselTrack = overlay.querySelector('.carousel-track');
 
   let lastFocusedElement = null;
 
@@ -36,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
       tagsEl.appendChild(span);
     });
 
-    // Build the media list for the carousel from this card's data-media attribute
-    // (a comma-separated list of "type:src" pairs, e.g. "video:images/projects/x.mp4,image:images/projects/y.jpg")
+    if (carouselTrack) {
+      carouselTrack.classList.toggle('carousel-track--square', card.dataset.aspect === 'square');
+    }
+
     const mediaList = (card.dataset.media || '')
       .split(',')
       .map((entry) => entry.trim())
@@ -67,7 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', () => openModal(card));
   });
 
-  closeBtn.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeModal();
+  });
 
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) closeModal();
@@ -79,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Basic focus trap while modal is open
   modal.addEventListener('keydown', (e) => {
     if (e.key !== 'Tab') return;
     const focusable = modal.querySelectorAll('button, a, [tabindex]:not([tabindex="-1"])');
