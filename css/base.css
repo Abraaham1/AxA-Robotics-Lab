@@ -126,19 +126,10 @@ button {
 .status {
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
   color: var(--text-secondary);
-}
-
-.status::before {
-  content: '';
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: currentColor;
-  flex-shrink: 0;
 }
 
 .status--completed { color: var(--status-completed); }

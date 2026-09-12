@@ -57,7 +57,7 @@
           <div class="accordion-item is-open">
             <button class="accordion-trigger" aria-expanded="true">
               <span class="accordion-trigger-label">
-                Reinforcement Learning &amp; Robotics
+                Reinforcement Learning and Robotics
                 <span class="status status--completed">Active</span>
               </span>
               <span class="accordion-icon" aria-hidden="true"></span>
@@ -123,22 +123,44 @@
     <section class="section">
       <div class="container">
         <div class="section-heading">
-          <h2>Future work</h2>
-          <p>Early-stage work not yet built, included here for direction, not as a finished result.</p>
+          <h2>Atmospheric-Escape Rocket and Satellite Payload</h2>
+          <p>A rocket designed to carry a small spherical satellite payload past the atmosphere, where it separates and measures outer-space temperature before relaying telemetry back to a ground station. Select either model for a closer look.</p>
         </div>
 
         <div class="roadmap-card">
           <div class="roadmap-media">
-            <img src="images/research/rocket-cad.jpg" alt="CAD cross-section of the planned rocket airframe, showing payload, propellant, and fin sections">
-            <img src="images/research/satellite-infographic.jpg" alt="Diagram of the planned spherical satellite payload, showing solar cells, sensors, and onboard systems">
+            <button
+              type="button"
+              class="roadmap-media-btn"
+              data-title="Rocket Airframe"
+              data-status="ongoing"
+              data-status-label="Ongoing"
+              data-description="A staged rocket airframe designed to carry the satellite payload past the atmosphere before separation. The upper section houses the payload and recovery system, with propellant stored in the lower stage."
+              data-tags="CAD Design, Aerospace, Payload Delivery"
+              data-media="image:images/research/rocket-cad-full.jpg"
+            >
+              <img src="images/research/rocket-model.jpg" alt="CAD render of the rocket airframe carrying the satellite payload">
+            </button>
+            <button
+              type="button"
+              class="roadmap-media-btn"
+              data-title="Satellite Payload"
+              data-status="ongoing"
+              data-status-label="Ongoing"
+              data-description="A spherical satellite payload with solar cells across its full surface for power in any orientation. Onboard temperature sensors, a flight computer, and a radio transceiver measure and relay outer-space conditions back to a ground station."
+              data-tags="Satellite Design, Autonomous Systems, Telemetry"
+              data-media="image:images/research/satellite-full.jpg"
+            >
+              <img src="images/research/satellite-model.jpg" alt="Cutaway render of the spherical satellite payload showing solar cells and onboard systems">
+            </button>
           </div>
           <div class="roadmap-copy">
-            <span class="status status--planned">Planned</span>
-            <h3>Atmospheric-Escape Rocket &amp; Satellite Payload</h3>
-            <p>A rocket designed to carry a small spherical satellite payload past the atmosphere, where it separates and measures outer-space temperature before relaying telemetry back to a ground station.</p>
+            <span class="status status--ongoing">Ongoing</span>
+            <h3>Mission overview</h3>
+            <p>The satellite separates from the rocket once past the atmosphere and operates independently from that point on.</p>
             <ul class="roadmap-list">
-              <li>360&deg; solar coverage for power in any orientation</li>
-              <li>Onboard temperature sensing (external, internal, electronics)</li>
+              <li>360-degree solar coverage for power in any orientation</li>
+              <li>Onboard temperature sensing across external surface, internal structure, and electronics</li>
               <li>Autonomous low-power operation cycle with periodic telemetry</li>
               <li>Ground station receiver and dashboard for live status</li>
             </ul>
@@ -147,6 +169,21 @@
       </div>
     </section>
   </main>
+
+  <div class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" aria-label="Close details">&times;</button>
+
+      <div class="carousel">
+        <div class="carousel-track"></div>
+      </div>
+
+      <span class="status" data-modal-status></span>
+      <h3 id="modal-title" data-modal-title></h3>
+      <p data-modal-description></p>
+      <div class="modal-tags" data-modal-tags></div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container">
@@ -160,5 +197,7 @@
 
   <script src="js/nav.js"></script>
   <script src="js/accordion.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/carousel.js"></script>
 </body>
 </html>
