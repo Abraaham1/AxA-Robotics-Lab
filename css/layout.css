@@ -153,8 +153,8 @@
 }
 
 .footer-brand {
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
   color: var(--text-tertiary);
 }
 

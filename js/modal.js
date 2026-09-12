@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lastFocusedElement) lastFocusedElement.focus();
   };
 
-  document.querySelectorAll('.project-card').forEach((card) => {
+  document.querySelectorAll('.project-card, .roadmap-media-btn').forEach((card) => {
     card.addEventListener('click', () => openModal(card));
   });
 

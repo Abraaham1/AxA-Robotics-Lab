@@ -155,8 +155,9 @@
 }
 
 .modal-tags span {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--fs-xs);
+  font-weight: 500;
   color: var(--text-secondary);
   border: 1px solid var(--border-hairline);
   padding: 0.25em 0.6em;
