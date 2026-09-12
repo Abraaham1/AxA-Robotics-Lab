@@ -136,7 +136,7 @@
 .roadmap-media-btn {
   display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 4;
   padding: 0;
   border: none;
   background: var(--bg-panel);
@@ -170,8 +170,8 @@
 .roadmap-media-btn img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
+  padding: var(--space-3);
   transition: transform var(--duration-base) var(--ease-standard);
 }
 
@@ -218,10 +218,5 @@
 @media (max-width: 900px) {
   .roadmap-card {
     grid-template-columns: 1fr;
-  }
-
-  .roadmap-media {
-    grid-template-columns: 1fr 1fr;
-    aspect-ratio: 16 / 9;
   }
 }
