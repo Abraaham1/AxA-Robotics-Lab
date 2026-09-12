@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Home page — hero, stats ledger, featured projects
+   ========================================================================== */
+
+.hero {
+  padding-block: var(--space-7) var(--space-6);
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.hero-copy h1 {
+  margin-bottom: var(--space-4);
+}
+
+.hero-copy p {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-4);
+}
+
+.hero-visual {
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-panel);
+  border-radius: var(--radius-sm);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.hero-visual svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Stats ledger — spec-sheet style row, not cards */
+.stats-ledger {
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.stats-ledger .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+  padding: var(--space-4) var(--space-3);
+  border-left: 1px solid var(--border-hairline);
+  text-align: left;
+}
+
+.stat:first-child {
+  border-left: none;
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xl);
+  font-weight: 500;
+  color: var(--accent-teal);
+  line-height: 1.1;
+}
+
+.stat-label {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+}
+
+/* Featured project preview cards */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.preview-card {
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+.preview-card:hover {
+  border-color: var(--accent-teal-dim);
+}
+
+.preview-card h3 {
+  margin-block: var(--space-2);
+}
+
+.preview-card p {
+  font-size: var(--fs-sm);
+}
+
+.preview-card .status {
+  margin-bottom: var(--space-2);
+}
+
+@media (max-width: 900px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .stats-ledger .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat:nth-child(3) {
+    border-left: none;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,230 @@
+/* ==========================================================================
+   Projects page — card grid, detail modal, media carousel
+   ========================================================================== */
+
+.page-header {
+  padding-block: var(--space-6) var(--space-5);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.page-header p {
+  font-size: var(--fs-md);
+}
+
+/* Project card grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.project-card {
+  text-align: left;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  background: var(--bg-panel);
+  padding: var(--space-4);
+  color: inherit;
+  font-family: inherit;
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+.project-card:hover {
+  border-color: var(--accent-teal-dim);
+}
+
+.project-card-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-base);
+  margin-bottom: var(--space-3);
+  border: 1px solid var(--border-hairline);
+}
+
+.project-card-media video,
+.project-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin-block: var(--space-2) var(--space-1);
+}
+
+.project-card .status {
+  margin-bottom: var(--space-2);
+}
+
+.project-card p {
+  font-size: var(--fs-sm);
+}
+
+.project-card .card-cta {
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--accent-teal);
+  font-weight: 500;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 8, 11, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-base) var(--ease-standard);
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  max-width: 720px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: var(--space-5);
+  transform: translateY(12px);
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.modal-overlay.is-open .modal {
+  transform: translateY(0);
+}
+
+.modal-close {
+  float: right;
+  background: transparent;
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-md);
+  line-height: 1;
+}
+
+.modal-close:hover {
+  border-color: var(--accent-teal);
+  color: var(--text-primary);
+}
+
+.modal h3 {
+  margin-bottom: var(--space-2);
+  clear: both;
+}
+
+.modal .status {
+  margin-bottom: var(--space-3);
+}
+
+.modal p {
+  max-width: none;
+  margin-bottom: var(--space-3);
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.modal-tags span {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-hairline);
+  padding: 0.25em 0.6em;
+  border-radius: var(--radius-sm);
+}
+
+/* Carousel — inside the modal */
+.carousel {
+  position: relative;
+  margin-bottom: var(--space-4);
+}
+
+.carousel-track {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-base);
+  border: 1px solid var(--border-hairline);
+}
+
+.carousel-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide.is-active {
+  display: block;
+}
+
+.carousel-slide video,
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+}
+
+.carousel-btn {
+  background: transparent;
+  border: 1px solid var(--border-hairline);
+  color: var(--text-primary);
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+}
+
+.carousel-btn:hover {
+  border-color: var(--accent-teal);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border-hairline);
+  border: none;
+  padding: 0;
+}
+
+.carousel-dot.is-active {
+  background: var(--accent-teal);
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,65 @@
+/* ==========================================================================
+   AxA Robotics and Research Lab — Design Tokens
+   ========================================================================== */
+
+:root {
+  /* Color — deep charcoal-blue base, not pure black. Teal = active/real work.
+     Amber = in-progress/planned. Color carries meaning throughout the site. */
+  --bg-base: #0d1117;
+  --bg-panel: #161b22;
+  --bg-panel-raised: #1c2229;
+  --border-hairline: #2a323c;
+
+  --text-primary: #e6e8eb;
+  --text-secondary: #8b949e;
+  --text-tertiary: #5c6672;
+
+  --accent-teal: #4fa8a0;
+  --accent-teal-dim: #3a7d77;
+  --accent-amber: #d97b4f;
+
+  --status-completed: #4fa8a0;
+  --status-ongoing: #d97b4f;
+  --status-planned: #5c6672;
+
+  /* Type */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --fs-xs: 0.8125rem;   /* 13px */
+  --fs-sm: 0.9375rem;   /* 15px */
+  --fs-base: 1.0625rem; /* 17px */
+  --fs-md: 1.25rem;     /* 20px */
+  --fs-lg: 1.75rem;     /* 28px */
+  --fs-xl: 2.5rem;      /* 40px */
+  --fs-xxl: 3.5rem;     /* 56px */
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  /* Layout */
+  --content-max: 1120px;
+  --content-narrow: 680px;
+  --radius-sm: 3px;
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

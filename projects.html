@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <meta name="description" content="Robotics and machine learning projects from AxA: humanoid locomotion, computer-vision robotic control, and neural morphogenesis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">AxA</span>
+        <span class="brand-full">Robotics and Research Lab</span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Projects</h1>
+        <p>Working builds across robotics control and generative systems. Select a project to see demo footage and technical notes.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="project-grid">
+
+          <button
+            class="project-card"
+            data-title="Humanoid Walking Robot"
+            data-status="completed"
+            data-status-label="Completed"
+            data-description="A 15-degree-of-freedom simulated humanoid, trained with reinforcement learning over 200 million steps using a multilayer perceptron policy network. The clip shows two evaluation scenarios: recovering balance under push and pull disturbances, and walking laterally without losing footing."
+            data-tags="Reinforcement Learning, PyBullet, MLP Policy, Simulation"
+            data-media="video:images/projects/humanoid-demo.mp4,image:images/projects/humanoid-1.jpg,image:images/projects/humanoid-2.jpg"
+          >
+            <div class="project-card-media">
+              <video src="images/projects/humanoid-demo.mp4" muted loop playsinline aria-hidden="true"></video>
+            </div>
+            <span class="status status--completed">Completed</span>
+            <h3>Humanoid Walking Robot</h3>
+            <p>15-DOF humanoid trained with RL over 200M simulated steps.</p>
+            <span class="card-cta">View demo &amp; details</span>
+          </button>
+
+          <button
+            class="project-card"
+            data-title="CV-Controlled Robotic Hand"
+            data-status="completed"
+            data-status-label="Completed"
+            data-description="A physical robotic hand controlled remotely through a computer-vision hand-tracking pipeline. Finger movements are captured from a live camera feed and mapped in real time to servo motors driving the mechanical hand, allowing control from anywhere with a camera and network connection."
+            data-tags="Computer Vision, OpenCV, MediaPipe, Servo Control"
+            data-media="video:images/projects/hand-demo.mp4,image:images/projects/hand-1.jpg,image:images/projects/hand-2.jpg"
+          >
+            <div class="project-card-media">
+              <video src="images/projects/hand-demo.mp4" muted loop playsinline aria-hidden="true"></video>
+            </div>
+            <span class="status status--completed">Completed</span>
+            <h3>CV-Controlled Robotic Hand</h3>
+            <p>A mechanical hand operable remotely via real-time hand tracking.</p>
+            <span class="card-cta">View demo &amp; details</span>
+          </button>
+
+          <button
+            class="project-card"
+            data-title="Neural Morphogenesis"
+            data-status="ongoing"
+            data-status-label="Ongoing"
+            data-description="A Neural Cellular Automata system that grows a target structure from a single seed cell, guided by a genome-like set of local update rules rather than a global blueprint. The current implementation works in 2D, shown here growing toward a target image. 3D and 4D (structure over time) extensions are in progress."
+            data-tags="Neural Cellular Automata, Self-Organization, PyTorch"
+            data-media="video:images/projects/morphogenesis-demo.mp4,image:images/projects/morph-1.jpg,image:images/projects/morph-2.jpg"
+          >
+            <div class="project-card-media">
+              <video src="images/projects/morphogenesis-demo.mp4" muted loop playsinline aria-hidden="true"></video>
+            </div>
+            <span class="status status--ongoing">Ongoing</span>
+            <h3>Neural Morphogenesis</h3>
+            <p>Growing target structures from a single cell using local rules, in 2D for now.</p>
+            <span class="card-cta">View demo &amp; details</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project detail modal (shared, populated per-card by modal.js) -->
+  <div class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Close project details">&times;</button>
+
+      <div class="carousel">
+        <div class="carousel-track"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" data-carousel-prev aria-label="Previous slide">&larr;</button>
+          <div class="carousel-dots"></div>
+          <button class="carousel-btn" data-carousel-next aria-label="Next slide">&rarr;</button>
+        </div>
+      </div>
+
+      <span class="status" data-modal-status></span>
+      <h3 id="modal-title" data-modal-title></h3>
+      <p data-modal-description></p>
+      <div class="modal-tags" data-modal-tags></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-brand">AxA Robotics and Research Lab &mdash; &copy; 2026</p>
+      <nav class="footer-links" aria-label="Social">
+        <a href="https://github.com/abraaham1" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/abdulrahman-iqbal01" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/carousel.js"></script>
+</body>
+</html>
