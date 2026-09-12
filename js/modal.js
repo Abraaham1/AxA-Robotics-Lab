@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const statusEl = overlay.querySelector('[data-modal-status]');
   const descEl = overlay.querySelector('[data-modal-description]');
   const tagsEl = overlay.querySelector('[data-modal-tags]');
-  const carouselTrack = overlay.querySelector('.carousel-track');
 
   let lastFocusedElement = null;
 
@@ -28,10 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
       span.textContent = tag.trim();
       tagsEl.appendChild(span);
     });
-
-    if (carouselTrack) {
-      carouselTrack.classList.toggle('carousel-track--square', card.dataset.aspect === 'square');
-    }
 
     const mediaList = (card.dataset.media || '')
       .split(',')
