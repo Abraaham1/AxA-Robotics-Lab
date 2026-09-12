@@ -138,9 +138,9 @@ button {
 
 @media (max-width: 768px) {
   :root {
-    --fs-xxl: 2.5rem;
-    --fs-xl: 1.9rem;
-    --fs-lg: 1.4rem;
+    --fs-xxl: 2.2rem;
+    --fs-xl: 1.672rem;
+    --fs-lg: 1.232rem;
   }
   .section { padding-block: var(--space-6); }
 }
