@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Contact page — inquiry form with validation states
+   ========================================================================== */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-6);
+}
+
+.contact-intro p {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-4);
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.contact-detail-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+}
+
+.form-field {
+  margin-bottom: var(--space-4);
+}
+
+.form-field label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 0.75em 1em;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--accent-teal);
+}
+
+.form-field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-field.has-error input,
+.form-field.has-error textarea {
+  border-color: #c0564a;
+}
+
+.field-error {
+  display: none;
+  margin-top: var(--space-1);
+  font-size: var(--fs-xs);
+  color: #d97b6f;
+}
+
+.form-field.has-error .field-error {
+  display: block;
+}
+
+.form-status {
+  display: none;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-4);
+}
+
+.form-status.is-visible {
+  display: block;
+}
+
+.form-status.is-success {
+  background: rgba(79, 168, 160, 0.12);
+  border: 1px solid var(--accent-teal-dim);
+  color: var(--accent-teal);
+}
+
+.form-status.is-error {
+  background: rgba(192, 86, 74, 0.1);
+  border: 1px solid #c0564a;
+  color: #d97b6f;
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
