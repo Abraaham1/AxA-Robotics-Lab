@@ -37,6 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const { el, validate } = fields[key];
     const isValid = validate(el.value);
     setFieldError(key, !isValid);
+    console.log(
+      `[contact-form] validate "${key}":`,
+      isValid ? 'PASS' : 'FAIL',
+      '- value:', JSON.stringify(el.value)
+    );
     return isValid;
   };
 
@@ -47,19 +52,29 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    console.group('[contact-form] submit triggered');
+    console.log('This is a static site with no backend: nothing is sent over the network.');
+    console.log('The steps below are the client-side validation this button actually runs.');
+
     const results = Object.keys(fields).map((key) => validateField(key));
     const allValid = results.every(Boolean);
+
+    console.log('All fields valid:', allValid);
 
     statusBox.classList.remove('is-visible', 'is-success', 'is-error');
 
     if (allValid) {
       statusBox.textContent = 'Message sent. Thanks for reaching out, expect a reply soon.';
       statusBox.classList.add('is-visible', 'is-success');
+      console.log('[contact-form] Validation passed, form reset. No network request was made.');
       form.reset();
     } else {
       statusBox.textContent = 'Please fix the highlighted fields before sending.';
       statusBox.classList.add('is-visible', 'is-error');
+      console.log('[contact-form] Validation failed, submission blocked.');
     }
+
+    console.groupEnd();
 
     statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
