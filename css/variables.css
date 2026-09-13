@@ -16,6 +16,8 @@
   --status-ongoing: #d97b4f;
   --status-planned: #5c6672;
 
+  --navbar-backdrop: rgba(13, 17, 23, 0.92);
+
   --font-display: Aptos, 'Segoe UI', Calibri, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   --font-body: Aptos, 'Segoe UI', Calibri, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
@@ -43,6 +45,31 @@
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
   --duration-fast: 150ms;
   --duration-base: 250ms;
+}
+
+/* Light theme — toggled by adding data-theme="light" to <html>.
+   Same variable names as the dark (default) theme above, so every
+   component that already reads var(--bg-base) etc. repaints
+   automatically with no per-component changes needed. */
+[data-theme="light"] {
+  --bg-base: #f7f6f2;
+  --bg-panel: #ffffff;
+  --bg-panel-raised: #f0efe9;
+  --border-hairline: #dcd9d0;
+
+  --text-primary: #1c1f24;
+  --text-secondary: #565c66;
+  --text-tertiary: #8a8f99;
+
+  --accent-teal: #2f8078;
+  --accent-teal-dim: #256560;
+  --accent-amber: #b85f34;
+
+  --status-completed: #2f8078;
+  --status-ongoing: #b85f34;
+  --status-planned: #8a8f99;
+
+  --navbar-backdrop: rgba(247, 246, 242, 0.92);
 }
 
 @media (prefers-reduced-motion: reduce) {
